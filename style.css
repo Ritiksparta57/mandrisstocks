@@ -1,0 +1,250 @@
+*{
+  margin:0;
+  padding:0;
+}
+ul, li {
+  list-style: none;
+}
+.nav{
+  width:100%;
+  height:55px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color: #f0f0f0;
+  position:fixed;
+  z-index:1000;
+}
+.logo{
+  text-decoration: none;
+  color:#a5a1a1;
+  display:flex;
+  font-size:1.1rem;
+  margin:15px;
+}
+.logo img{
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  border: 1px black solid;
+}
+.search{
+  text-decoration: none;
+  color:#a5a1a1;
+  display:flex;
+}
+.search input{
+  width:400px;
+  height:40px;
+  border-top-left-radius:30px;
+  border-bottom-left-radius: 30px;
+  padding:1.5px;
+}
+.search button{
+  width:50px;
+  height:47px;
+  border-top-right-radius:30px;
+  border-bottom-right-radius: 30px;
+  background-color: #9f9999;
+}
+.search img{
+  width:20px;
+  height:20px;
+  filter: invert(1);
+}
+.links{
+  text-decoration: none;
+  color:#a5a1a1;
+  display:flex;
+  gap:50px;
+  margin:15px;
+}
+.links img{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+   border: 1px black solid;
+}
+.links button{
+  border:none;
+}
+.sidebar {
+  position:fixed;
+  left: 0;
+  top:55px ;
+  width: 240px;
+  height: calc(100vh - 55px);
+  border-right: 1px solid #ddd;
+  border-top:1px solid #ddd;
+  padding-top: 16px;
+  overflow-y: auto;
+  background-color:#f0f0f0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: #ddd;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: #000;
+  transition: background-color 0.2s;
+  border: 1px black solid;
+  border-radius: 50px;
+  margin: 15px;
+  width: 200px;
+  background-color: transparent;
+  font-size: 14px;
+}
+
+.sidebar-item.active {
+  background-color: #51657b;
+  color: white;
+  border-color: #51657b;
+}
+
+.sidebar-item i {
+  margin-right: 16px;
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar-item:hover {
+  background-color:#ccb8b8;
+}
+
+hr {
+  margin: 12px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+main{
+  position:relative;
+  left: 240px;
+  top: 55px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  min-height: calc(100vh - 55px);
+  width: calc(100% - 240px);
+  box-sizing: border-box;
+  border-top:1px solid #ddd; 
+  scrollbar-width: none;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.video-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+.video-info {
+  padding: 12px;
+}
+
+.video-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.video-meta {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.video-views {
+  font-size: 12px;
+  color: #999;
+}
+.video-grid h1{
+  width:1100px;
+  height:500px;
+  color: #666;
+}
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  font-size: 18px;
+}
+
+.error {
+  text-align: center;
+  padding: 40px;
+  color: #e74c3c;
+  font-size: 16px;
+}
+.sl {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 1000;
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.search{
+  position:relative;
+}
+.sl li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sl li:hover {
+  background-color: #f0f0f0;
+}
