@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandris Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="html" href="index.html">
+</head>
+<body>
+     <header>
+      <ul>
+        <div class="nav">
+          <li class="logo">
+            <img
+              src="https://imgs.search.brave.com/s2WnrvR5KoWZ75la-SQUSZMlzjMrpKy0PQChRgbMA5I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzYwLzAzLzg3/LzM2MF9GXzU2MDAz/ODc1M19jcmFBb0dT/QUxtSFdLWWJ2Nkt6/cnRpTFZMTFlKR2pR/Ty5qcGc"
+            />
+            <h1>Mandris1</h1>
+          </li>
+          <li class="links">
+            <a href="index.html">
+              <img src="https://imgs.search.brave.com/s2WnrvR5KoWZ75la-SQUSZMlzjMrpKy0PQChRgbMA5I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzYwLzAzLzg3/LzM2MF9GXzU2MDAz/ODc1M19jcmFBb0dT/QUxtSFdLWWJ2Nkt6/cnRpTFZMTFlKR2pR/Ty5qcGc" />
+            </a>
+            <a href="LOGIN.html"
+              ><img          src="https://static.vecteezy.com/system/resources/previews/006/732/119/large_2x/account-icon-sign-symbol-logo-design-free-vector.jpg"
+            /></a>
+        </div>
+      </ul>
+    </header>
+    <form action="/login" class="card" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+document.querySelector('form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  alert('Login complete');
+});
+</script>
+</body>
+</html>
