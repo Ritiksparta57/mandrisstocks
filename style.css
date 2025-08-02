@@ -248,3 +248,95 @@ main{
 .sl li:hover {
   background-color: #f0f0f0;
 }
+@media (max-width: 800px) {
+  html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .nav {
+    flex-direction:row;
+    align-items: flex-start;
+    padding: 10px;
+    height: auto;
+    width: 100%;
+    border-bottom: 1px solid;
+  }
+
+  .logo {
+    margin: 5px 10px;
+    font-size: 0.9rem;
+  }
+
+  .search {
+    margin: 10px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .search input {
+    width: 70%;
+    height: 36px;
+  }
+
+  .search button {
+    height: 39px;
+  }
+
+  .links {
+    gap: 10px;
+    margin: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .links img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sidebar {
+    position: relative;
+    top:80px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border: none;
+    border-top: 1px solid #ccc;
+    padding: 10px 0;
+    border-bottom: 1px solid;
+  }
+
+  .sidebar-item {
+    width: auto;
+    margin: 5px;
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  main {
+    left: 0;
+    top: 80px;
+    width: 100%;
+    padding: 12px;
+    min-height: calc(100vh - 55px);
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .video-thumbnail {
+    height: 160px;
+  }
+}
+
