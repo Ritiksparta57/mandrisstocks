@@ -68,18 +68,18 @@ class StockAPI {
   generateMockData() {
     const mockData = [];
     const today = new Date();
-
+    
     for (let i = 0; i < 10; i++) {
       const date = new Date();
       date.setDate(today.getDate() - i);
-
+      
       const basePrice = 150;
       const open = basePrice + (Math.random() - 0.5) * 10;
       const close = open + (Math.random() - 0.5) * 15;
       const high = Math.max(open, close) + Math.random() * 5;
       const low = Math.min(open, close) - Math.random() * 5;
       const volume = Math.floor(Math.random() * 1000000) + 500000;
-
+      
       mockData.push({
         date: date.toISOString().split('T')[0],
         open: open.toFixed(2),
@@ -89,7 +89,7 @@ class StockAPI {
         volume: volume.toString()
       });
     }
-
+    
     return mockData;
   }
 
@@ -107,20 +107,78 @@ class StockAPI {
       </div>
     `;
   }
+drawChart(stocks) {
+  const ctx = document.getElementById('stockChart').getContext('2d');
+
+  const labels = stocks.map(s => s.date).reverse();
+  const prices = stocks.map(s => parseFloat(s.close)).reverse();
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Closing Price',
+        data: prices,
+        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        fill: true,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+       maintainAspectRatio: true,
+      scales: {
+        x: {
+          title: {
+            display: true,
+            text: 'Date'
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: 'Price (₹)'
+          }
+        }
+      }
+    }
+  });
+}
+
 
   renderStocks(stocks) {
     if (!this.stockGrid) {
       console.error('Stock grid element not found');
       return;
     }
-
+    
     if (stocks.length === 0) {
       this.stockGrid.innerHTML = '<div class="error">No stock data available</div>';
       return;
     }
+this.stockGrid.innerHTML = '';
+const wrapper = document.createElement('div');
+wrapper.style.display = 'flex';
+wrapper.style.flexDirection = 'column';
+wrapper.style.gap = '30px';
+wrapper.style.width ='75vw' ;
+wrapper.style.boxSizing = 'border-box';
+const canvas = document.createElement('canvas');
+canvas.id = 'stockChart';
+canvas.style.width = '100%';
+canvas.style.height = '400px';
+wrapper.appendChild(canvas);
+const cardsHTML = stocks.map(stock => this.createStockCard(stock)).join('');
+const cardContainer = document.createElement('div');
+cardContainer.innerHTML = cardsHTML;
+wrapper.appendChild(cardContainer);
+this.stockGrid.appendChild(wrapper);
+this.drawChart(stocks);
 
-    this.stockGrid.innerHTML = stocks.map(stock => this.createStockCard(stock)).join('');
   }
+
 
   async init(index) {
     if (this.stockGrid) {
