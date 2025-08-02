@@ -1,4 +1,3 @@
-let b = document.querySelector('body');
 class StockAPI {
   constructor() {
     this.baseURL0 = 'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=RELIANCE.BSE&outputsize=full&apikey=demo';
@@ -69,18 +68,18 @@ class StockAPI {
   generateMockData() {
     const mockData = [];
     const today = new Date();
-    
+
     for (let i = 0; i < 10; i++) {
       const date = new Date();
       date.setDate(today.getDate() - i);
-      
+
       const basePrice = 150;
       const open = basePrice + (Math.random() - 0.5) * 10;
       const close = open + (Math.random() - 0.5) * 15;
       const high = Math.max(open, close) + Math.random() * 5;
       const low = Math.min(open, close) - Math.random() * 5;
       const volume = Math.floor(Math.random() * 1000000) + 500000;
-      
+
       mockData.push({
         date: date.toISOString().split('T')[0],
         open: open.toFixed(2),
@@ -90,7 +89,7 @@ class StockAPI {
         volume: volume.toString()
       });
     }
-    
+
     return mockData;
   }
 
@@ -114,12 +113,12 @@ class StockAPI {
       console.error('Stock grid element not found');
       return;
     }
-    
+
     if (stocks.length === 0) {
       this.stockGrid.innerHTML = '<div class="error">No stock data available</div>';
       return;
     }
-    
+
     this.stockGrid.innerHTML = stocks.map(stock => this.createStockCard(stock)).join('');
   }
 
@@ -210,3 +209,4 @@ search.addEventListener('input', (e) => {
     list.style.display = 'block';
   }
 });
+
