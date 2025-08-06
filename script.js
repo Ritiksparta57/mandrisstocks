@@ -141,10 +141,10 @@ class StockAPI {
       <div class="video-card">
         <div class="video-info">
           <div class="video-title">${stock.date}</div>
-          <div style="color:green" class="video-meta"><strong>Open:</strong> ₹${parseFloat(stock.open).toFixed(2)}</div>
-          <div style="color:blue"class="video-meta"><strong>High:</strong> ₹${parseFloat(stock.high).toFixed(2)}</div>
-          <div style="color:blue" class="video-meta"><strong>Low:</strong> ₹${parseFloat(stock.low).toFixed(2)}</div>
-          <div style="color:red" class="video-views"><strong>Close:</strong> ₹${parseFloat(stock.close).toFixed(2)}</div>
+          <div style="color:green" class="video-meta"><strong>Open:</strong> $${parseFloat(stock.open).toFixed(2)}</div>
+          <div style="color:blue"class="video-meta"><strong>High:</strong> $${parseFloat(stock.high).toFixed(2)}</div>
+          <div style="color:blue" class="video-meta"><strong>Low:</strong> $${parseFloat(stock.low).toFixed(2)}</div>
+          <div style="color:red" class="video-views"><strong>Close:</strong> $${parseFloat(stock.close).toFixed(2)}</div>
           <div class="video-views"><strong>Volume:</strong> ${parseInt(stock.volume).toLocaleString()}</div>
         </div>
       </div>
