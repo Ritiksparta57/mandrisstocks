@@ -1,5 +1,5 @@
-         const indexmap={
-  0:"Reliance Industries Ltd.",
+         const companyName=
+  0:"NVIDIA",
   1:"IBM Corp.",  
   2:"Tata Consultancy Services Ltd.",
   3:"Microsoft Corp.",
@@ -25,8 +25,8 @@ class StockAPI {
        const companyName = indexmap[index];
     let symbol;
     switch (companyName) {
-      case "Reliance Industries Ltd.":
-        symbol = "RELIANCE.BSE";
+      case "NVIDIA":
+        symbol = "NVDA";
         break;
       case "IBM Corp.":
         symbol = "IBM";
