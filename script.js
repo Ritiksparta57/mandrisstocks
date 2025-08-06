@@ -1,4 +1,4 @@
-         const companyName={
+         const indexmap={
   0:"NVIDIA",
   1:"IBM Corp.",  
   2:"Tata Consultancy Services Ltd.",
