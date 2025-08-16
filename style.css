@@ -381,52 +381,43 @@ main{
   to { transform: rotate(360deg); }
 }
  @media (max-width: 800px) {
-  html, body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    width: 100%;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    background: #f0f0f0;
-  }
-
-  /* NAVBAR */
   .nav {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between; /* space out logo - search - icons */
     align-items: center;
-    gap: 10px;
-    padding: 12px;
-    border-bottom: 1px solid #ccc;
+    padding: 10px;
     background: #fff;
+    border-bottom: 1px solid #ccc;
+    gap: 8px;
   }
 
   .logo {
-    font-size: 1rem;
-    font-weight: bold;
     display: flex;
     align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
     gap: 6px;
   }
 
   .search {
-    width: 100%;
+    flex: 1; /* take remaining space */
     display: flex;
+    align-items: center;
     justify-content: center;
   }
 
   .search input {
-    width: 70%;
-    height: 36px;
-    padding: 6px 10px;
+    width: 100%;
+    max-width: 180px; /* so it won’t stretch too much */
+    height: 32px;
+    padding: 4px 8px;
     border: 1px solid #ccc;
     border-radius: 6px 0 0 6px;
   }
 
   .search button {
-    height: 38px;
-    padding: 0 12px;
+    height: 34px;
+    padding: 0 10px;
     border: 1px solid #ccc;
     border-left: none;
     border-radius: 0 6px 6px 0;
@@ -436,69 +427,13 @@ main{
 
   .links {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: center;
+    align-items: center;
+    gap: 8px;
   }
 
   .links img {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     cursor: pointer;
-  }
-
-  /* SIDEBAR (turns into top section buttons) */
-  .sidebar {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    padding: 10px;
-    background: #f9f9f9;
-  }
-
-  .sidebar-item {
-    font-size: 14px;
-    margin: 5px;
-    padding: 10px 14px;
-    border-radius: 6px;
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    flex: 1 1 40%;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  /* MAIN CONTENT FULL WIDTH */
-  main {
-    margin: 0;
-    padding: 12px;
-    width: 100%;
-    background-color: #f0f0f0;
-    box-sizing: border-box;
-  }
-
-  /* VIDEO GRID SINGLE COLUMN */
-  .video-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .video-thumbnail {
-    width: 100%;
-    height: 160px;
-    background: #ccc;
-    border-radius: 8px;
-  }
-
-  /* RIGHTBAR behaves like sidebar (stacked below) */
-  .rightbar {
-    width: 100%;
-    padding: 10px;
-    background: #f9f9f9;
-    margin-top: 10px;
-    border-radius: 6px;
   }
 }
