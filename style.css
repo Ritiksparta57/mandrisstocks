@@ -436,4 +436,29 @@ main{
     height: 28px;
     cursor: pointer;
   }
+/* SIDEBAR (on mobile, make it a button grid on top) */
+.sidebar {
+  position: static;        /* remove fixed/side position */
+  width: 100%;             /* full width */
+  display: flex;
+  flex-wrap: wrap;         /* allow wrapping */
+  justify-content: center; /* center buttons */
+  gap: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  border: none;
+  margin-bottom: 12px;     /* space before main content */
+}
+
+.sidebar-item {
+  flex: 1 1 40%;           /* two buttons per row */
+  max-width: 160px;        /* don’t let them grow too big */
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
 }
