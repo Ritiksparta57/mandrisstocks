@@ -436,29 +436,30 @@ main{
     height: 28px;
     cursor: pointer;
   }
-/* SIDEBAR (on mobile, make it a button grid on top) */
-.sidebar {
-  position: static;        /* remove fixed/side position */
-  width: 100%;             /* full width */
-  display: flex;
-  flex-wrap: wrap;         /* allow wrapping */
-  justify-content: center; /* center buttons */
-  gap: 10px;
-  padding: 10px;
-  background: #f9f9f9;
-  border: none;
-  margin-bottom: 12px;     /* space before main content */
-}
+@media (max-width: 800px) {
+  .sidebar {
+    position: static;        /* remove fixed sidebar */
+    width: 100%;             /* full width */
+    display: flex;
+    overflow-x: auto;        /* enable horizontal scroll */
+    gap: 10px;
+    padding: 8px;
+    background: #f9f9f9;
+    border: none;
+    margin-bottom: 12px;
+    white-space: nowrap;     /* keep items in one line */
+    -webkit-overflow-scrolling: touch; /* smooth scroll */
+  }
 
-.sidebar-item {
-  flex: 1 1 40%;           /* two buttons per row */
-  max-width: 160px;        /* don’t let them grow too big */
-  font-size: 14px;
-  text-align: center;
-  padding: 10px 12px;
-  border-radius: 6px;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  cursor: pointer;
+  .sidebar-item {
+    flex: 0 0 auto;          /* prevent shrinking */
+    font-size: 14px;
+    text-align: center;
+    padding: 8px 14px;
+    border-radius: 20px;     /* pill-style buttons */
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    cursor: pointer;
+  }
 }
 }
