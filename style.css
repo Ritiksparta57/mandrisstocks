@@ -381,85 +381,88 @@ main{
   to { transform: rotate(360deg); }
 }
  @media (max-width: 800px) {
+  /* NAVBAR smaller */
   .nav {
-    display: flex;
-    justify-content: space-between; /* space out logo - search - icons */
-    align-items: center;
-    padding: 10px;
-    background: #fff;
-    border-bottom: 1px solid #ccc;
-    gap: 8px;
+    height: 45px;
+    padding: 4px 8px;
+    justify-content: space-between;
   }
 
   .logo {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: bold;
-    gap: 6px;
+    font-size: 0.9rem;
+    margin: 0;
   }
 
-  .search {
-    flex: 1; /* take remaining space */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .logo img {
+    width: 24px;
+    height: 24px;
   }
 
   .search input {
-    width: 100%;
-    max-width: 180px; /* so it won’t stretch too much */
-    height: 32px;
-    padding: 4px 8px;
-    border: 1px solid #ccc;
-    border-radius: 6px 0 0 6px;
+    width: 120px;
+    height: 28px;
+    font-size: 12px;
   }
 
   .search button {
-    height: 34px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    border-left: none;
-    border-radius: 0 6px 6px 0;
-    background: #eee;
-    cursor: pointer;
+    width: 36px;
+    height: 30px;
   }
 
   .links {
-    display: flex;
-    align-items: center;
     gap: 8px;
+    margin: 0;
   }
 
   .links img {
     width: 28px;
     height: 28px;
-    cursor: pointer;
   }
-@media (max-width: 800px) {
+
+  /* LAYOUT */
   .sidebar {
-    position: static;        /* remove fixed sidebar */
-    width: 100%;             /* full width */
-    display: flex;
-    overflow-x: auto;        /* enable horizontal scroll */
-    gap: 10px;
-    padding: 8px;
-    background: #f9f9f9;
-    border: none;
-    margin-bottom: 12px;
-    white-space: nowrap;     /* keep items in one line */
-    -webkit-overflow-scrolling: touch; /* smooth scroll */
+    position: sticky;           /* stick under navbar */
+    top: 45px;
+    width: 30%;
+    height: calc(100vh - 45px);
+    margin: 0;
+    padding: 6px;
+    overflow-y: auto;
+    background: #f0f0f0;
   }
 
   .sidebar-item {
-    flex: 0 0 auto;          /* prevent shrinking */
-    font-size: 14px;
+    width: 100%;
+    font-size: 13px;
+    padding: 6px 10px;
+    margin: 6px 0;
     text-align: center;
-    padding: 8px 14px;
-    border-radius: 20px;     /* pill-style buttons */
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    cursor: pointer;
+  }
+
+  main {
+    margin-left: 30%;
+    margin-right: 0;
+    width: 70%;
+    top: 45px;
+    padding: 10px;
+    min-height: calc(100vh - 45px);
+  }
+
+  .rightbar {
+    position: static;           /* remove fixed */
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+    border: none;
+    box-shadow: none;
+    background: #f9f9f9;
+    padding: 10px;
+  }
+
+  .news-container {
+    font-size: 13px;
+    padding: 8px;
+    background: #e9e9e9;
   }
 }
 }
