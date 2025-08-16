@@ -387,22 +387,24 @@ main{
     overflow-x: hidden;
     width: 100%;
     height: 100%;
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
   }
 
   /* NAVBAR */
   .nav {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
-    height: auto;
-    width: 100%;
-    border-bottom: 1px solid;
-    gap: 8px;
+    gap: 10px;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    background: #fff;
   }
 
   .logo {
-    margin: 0;
     font-size: 1rem;
+    font-weight: bold;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -417,15 +419,24 @@ main{
   .search input {
     width: 70%;
     height: 36px;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px 0 0 6px;
   }
 
   .search button {
-    height: 39px;
+    height: 38px;
+    padding: 0 12px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    background: #eee;
+    cursor: pointer;
   }
 
   .links {
+    display: flex;
     gap: 10px;
-    margin: 5px 0;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -433,33 +444,35 @@ main{
   .links img {
     width: 30px;
     height: 30px;
+    cursor: pointer;
   }
 
-  /* REMOVE FIXED SIDEBARS */
-  .sidebar, .rightbar {
-    position: static;
+  /* SIDEBAR (turns into top section buttons) */
+  .sidebar {
     width: 100%;
-    height: auto;
-    border: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 8px;
     padding: 10px;
-    background: #f0f0f0;
+    background: #f9f9f9;
   }
 
   .sidebar-item {
     font-size: 14px;
     margin: 5px;
-    padding: 8px 10px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     flex: 1 1 40%;
     text-align: center;
+    cursor: pointer;
   }
 
   /* MAIN CONTENT FULL WIDTH */
   main {
     margin: 0;
-    top: 0;
     padding: 12px;
     width: 100%;
     background-color: #f0f0f0;
@@ -468,58 +481,24 @@ main{
 
   /* VIDEO GRID SINGLE COLUMN */
   .video-grid {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 10px;
+    gap: 12px;
   }
 
   .video-thumbnail {
+    width: 100%;
     height: 160px;
+    background: #ccc;
+    border-radius: 8px;
   }
 
-  /* STOCK CHART HIDE OR FULL WIDTH */
-  #stockChart {
-    width: 100% !important;
-    height: 250px !important;
-    display: none; /* Or remove display:none if you want it visible */
-  }
-
-  /* CAR ANIMATION SMALLER */
-  .road {
-    width: 80vw;
-    height: 180px;
-    margin: 0 auto;
-  }
-
-  .car-container {
-    top: 200px;
-    left: -200px;
-    animation: drive 8s linear infinite;
-  }
-
-  .car {
-    width: 120px;
-    height: 90px;
-  }
-
-  .window {
-    width: 25px;
-    height: 40px;
-  }
-
-  .door {
-    width: 20px;
-    height: 60px;
-  }
-
-  .wheel {
-    width: 20px;
-    height: 20px;
-  }
-
-  .message {
-    font-size: 0.85rem;
-    top: -70px;
-    padding: 6px 10px;
+  /* RIGHTBAR behaves like sidebar (stacked below) */
+  .rightbar {
+    width: 100%;
+    padding: 10px;
+    background: #f9f9f9;
+    margin-top: 10px;
+    border-radius: 6px;
   }
 }
-
